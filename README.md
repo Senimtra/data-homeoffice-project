@@ -1,4 +1,4 @@
-# Home office - get work done! ✅
+# Home office Monitor ✅
 
 <br><img src="https://media.giphy.com/media/jbw127VLZdYtz61yjS/giphy.gif" width="400"><br><br>
 
@@ -37,5 +37,9 @@ I want to remove this contradiction and show the following:
 * Own online survey
 * Data preparation (Python/Pandas)
 * SQL database (AWS)
-* Backend (Python, otherwise NodeJS)
+* Backend (Django)
 * Frontend (HTML, CSS, JavaScript, Bootstrap)
+
+## Project management? ✔️
+
+* <a href="https://github.com/users/Senimtra/projects/3" target="_blank">GitHub Projects</a>
