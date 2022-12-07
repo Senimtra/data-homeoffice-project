@@ -1,0 +1,101 @@
+gender,age,children,rural,executive,employees,wfh_days,more_breaks,wfh_day_condition,productivity
+Male,35-44,Yes,No,Yes,>500,1,Yes,I feel better,I'm a lot more productive
+Male,25-34,No,No,Yes,>500,5,No,I feel like I always do,I'm as productive as ever
+Male,35-44,No,No,Yes,11-50,1,Yes,I feel great,I'm a lot more productive
+Female,35-44,No,No,Yes,>500,5,No,I feel better,I'm a lot more productive
+Female,35-44,No,No,No,>500,2,No,I feel great,I'm more productive
+Male,25-34,Yes,Yes,No,>500,5,No,I feel like I always do,I'm a lot more productive
+Male,<25,No,No,No,>500,3,Yes,I don't feel so good,I'm a lot less productive
+Female,25-34,No,Yes,Yes,51-500,2,Yes,I feel better,I'm a lot more productive
+Female,55-64,No,Yes,No,>500,5,Yes,I feel like I always do,I'm less productive
+Female,35-44,Yes,Yes,No,1,5,Yes,I feel better,I'm as productive as ever
+Male,45-54,No,No,Yes,51-500,1,Yes,I feel worse,I'm a lot less productive
+Female,<25,No,No,Yes,11-50,2,Yes,I feel great,I'm as productive as ever
+Female,<25,No,No,No,>500,4,No,I feel worse,I'm less productive
+Female,55-64,No,No,No,51-500,1,No,I feel great,I'm more productive
+Female,35-44,Yes,No,Yes,51-500,1,Yes,I feel better,I'm more productive
+Male,45-54,No,No,Yes,>500,3,No,I feel like I always do,I'm a lot more productive
+Male,25-34,No,No,Yes,>500,3,Yes,I feel better,I'm as productive as ever
+Male,45-54,Yes,No,Yes,>500,5,Yes,I feel great,I'm a lot more productive
+Male,45-54,Yes,No,Yes,11-50,2,No,I feel like I always do,I'm more productive
+Male,35-44,No,No,No,>500,5,Yes,I feel like I always do,I'm as productive as ever
+Female,35-44,Yes,No,Yes,51-500,1,Yes,I feel great,I'm more productive
+Female,35-44,No,No,No,>500,3,No,I feel better,I'm a lot more productive
+Female,25-34,No,Yes,No,>500,2,Yes,I feel worse,I'm less productive
+Male,25-34,No,No,No,51-500,3,Yes,I feel better,I'm more productive
+Male,45-54,Yes,No,No,>500,4,No,I feel like I always do,I'm as productive as ever
+Female,<25,Yes,No,No,51-500,2,No,I feel like I always do,I'm as productive as ever
+Female,35-44,Yes,Yes,No,2-10,5,Yes,I feel great,I'm a lot more productive
+Male,55-64,No,Yes,Yes,1,5,No,I feel like I always do,I'm more productive
+Male,45-54,Yes,No,Yes,51-500,4,Yes,I feel better,I'm a lot more productive
+Male,35-44,No,No,Yes,51-500,5,No,I feel great,I'm more productive
+Female,55-64,No,No,No,>500,5,Yes,I feel better,I'm a lot more productive
+Male,25-34,No,No,No,>500,5,Yes,I feel better,I'm a lot more productive
+Male,25-34,Yes,No,Yes,>500,4,Yes,I feel like I always do,I'm more productive
+Male,25-34,No,No,No,>500,5,Yes,I feel great,I'm a lot more productive
+Male,55-64,Yes,No,No,51-500,5,Yes,I feel better,I'm more productive
+Male,35-44,Yes,Yes,No,51-500,1,Yes,I feel better,I'm less productive
+Male,45-54,Yes,No,No,>500,5,Yes,I feel like I always do,I'm as productive as ever
+Female,25-34,Yes,No,Yes,51-500,5,Yes,I feel like I always do,I'm less productive
+Male,55-64,No,Yes,No,>500,1,No,I feel better,I'm more productive
+Female,35-44,No,No,Yes,>500,5,No,I feel great,I'm more productive
+Male,<25,Yes,Yes,Yes,2-10,1,Yes,I feel like I always do,I'm a lot more productive
+Female,25-34,No,No,No,>500,4,Yes,I feel great,I'm a lot more productive
+Male,55-64,Yes,No,No,>500,5,No,I feel like I always do,I'm as productive as ever
+Male,55-64,No,No,Yes,>500,5,No,I feel like I always do,I'm as productive as ever
+Female,25-34,Yes,No,No,>500,5,Yes,I feel great,I'm less productive
+Non-binary,25-34,No,No,No,51-500,1,Yes,I don't feel so good,I'm a lot less productive
+Female,25-34,Yes,No,No,51-500,3,Yes,I feel like I always do,I'm more productive
+Male,55-64,Yes,No,No,2-10,3,Yes,I feel like I always do,I'm as productive as ever
+Male,55-64,No,No,No,>500,1,Yes,I feel worse,I'm a lot less productive
+Male,25-34,Yes,No,Yes,>500,3,Yes,I feel better,I'm a lot more productive
+Male,45-54,No,No,No,>500,0,Yes,I feel better,I'm as productive as ever
+Male,45-54,Yes,Yes,No,>500,1,Yes,I feel better,I'm less productive
+Female,55-64,No,No,Yes,11-50,1,No,I feel better,I'm more productive
+Male,25-34,No,No,Yes,>500,5,No,I don't feel so good,I'm as productive as ever
+Male,25-34,No,No,No,>500,4,Yes,I feel like I always do,I'm more productive
+Female,<25,No,No,Yes,51-500,1,Yes,I feel better,I'm as productive as ever
+Male,25-34,No,No,Yes,>500,5,Yes,I feel like I always do,I'm less productive
+Female,45-54,Yes,Yes,No,>500,5,No,I feel great,I'm a lot more productive
+Female,35-44,Yes,No,No,>500,3,Yes,I feel better,I'm as productive as ever
+Male,25-34,No,No,No,51-500,1,Yes,I don't feel so good,I'm a lot more productive
+Male,25-34,Yes,No,Yes,11-50,2,Yes,I feel like I always do,I'm more productive
+Female,25-34,No,No,Yes,11-50,2,Yes,I feel like I always do,I'm a lot more productive
+Female,55-64,No,Yes,Yes,51-500,1,No,I feel better,I'm more productive
+Male,25-34,No,No,Yes,51-500,5,Yes,I feel great,I'm more productive
+Female,25-34,Yes,Yes,No,>500,0,Yes,I feel great,I'm as productive as ever
+Male,35-44,Yes,No,Yes,51-500,5,No,I feel like I always do,I'm a lot more productive
+Male,35-44,Yes,Yes,Yes,>500,2,Yes,I feel better,I'm more productive
+Female,35-44,Yes,No,Yes,11-50,5,Yes,I feel better,I'm as productive as ever
+Male,45-54,Yes,No,Yes,>500,5,No,I feel great,I'm a lot more productive
+Female,35-44,No,No,Yes,51-500,1,Yes,I feel like I always do,I'm more productive
+Female,35-44,Yes,No,No,11-50,3,Yes,I feel great,I'm more productive
+Female,25-34,No,No,Yes,>500,2,Yes,I feel better,I'm a lot more productive
+Female,45-54,Yes,Yes,No,11-50,5,No,I feel like I always do,I'm as productive as ever
+Male,35-44,Yes,No,No,>500,5,No,I feel better,I'm more productive
+Female,35-44,No,No,No,51-500,3,No,I feel better,I'm a lot more productive
+Male,25-34,No,No,No,51-500,3,Yes,I feel better,I'm more productive
+Female,35-44,Yes,No,No,>500,5,No,I feel better,I'm more productive
+Female,25-34,Yes,Yes,No,51-500,5,Yes,I feel better,I'm a lot more productive
+Male,35-44,Yes,No,Yes,51-500,4,Yes,I feel great,I'm a lot more productive
+Male,25-34,Yes,No,No,11-50,5,No,I feel like I always do,I'm as productive as ever
+Female,45-54,No,Yes,No,>500,4,Yes,I feel great,I'm more productive
+Female,55-64,No,No,No,2-10,1,No,I feel like I always do,I'm as productive as ever
+Male,25-34,No,No,No,51-500,5,Yes,I feel great,I'm more productive
+Female,25-34,Yes,No,No,51-500,5,Yes,I feel great,I'm a lot more productive
+Male,25-34,No,Yes,No,>500,5,No,I feel better,I'm a lot more productive
+Male,35-44,No,No,Yes,>500,5,Yes,I feel like I always do,I'm more productive
+Male,35-44,No,No,No,>500,5,Yes,I feel great,I'm a lot more productive
+Male,55-64,No,No,Yes,>500,5,Yes,I feel better,I'm a lot more productive
+Male,45-54,Yes,Yes,Yes,2-10,1,Yes,I feel like I always do,I'm as productive as ever
+Male,45-54,Yes,No,No,>500,4,No,I feel like I always do,I'm as productive as ever
+Female,<25,Yes,No,No,>500,4,Yes,I feel great,I'm a lot more productive
+Male,35-44,No,Yes,Yes,51-500,1,No,I feel like I always do,I'm more productive
+Female,25-34,No,No,No,1,4,Yes,I feel better,I'm a lot more productive
+Male,25-34,No,No,No,>500,3,Yes,I feel great,I'm a lot more productive
+Female,35-44,Yes,No,Yes,>500,5,No,I feel great,I'm a lot more productive
+Female,25-34,Yes,No,No,51-500,3,No,I feel like I always do,I'm as productive as ever
+Female,<25,Yes,Yes,Yes,51-500,4,Yes,I feel great,I'm a lot more productive
+Male,35-44,Yes,No,Yes,>500,4,Yes,I feel like I always do,I'm less productive
+Female,55-64,No,Yes,No,>500,1,Yes,I feel great,I'm more productive
+Female,35-44,No,Yes,Yes,2-10,3,Yes,I feel better,I'm a lot more productive
