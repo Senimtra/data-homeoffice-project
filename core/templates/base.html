@@ -13,6 +13,15 @@
 
    <p>base-template</p>
 
+   <nav>
+      <ul>
+         <li><a href="{% url 'home' %}">Home</a></li>
+         <li><a href="{% url 'analysis' %}">Analysis</a></li>
+         <li><a href="{% url 'employees' %}">Employees</a></li>
+         <li><a href="{% url 'companies' %}">Companies</a></li>
+      </ul>
+   </nav>
+
    {% block content %}{% endblock %}
 
 </body>
