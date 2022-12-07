@@ -1,5 +1,25 @@
 {% extends "base.html" %}
 
 {% block content %}
-   <p>analysis-template</p>
+
+<h4>Employee Survey</h4>
+<br>
+<table>
+   {% for employee in employees %}
+   <tr>
+      <td>{{employee.id}}</td>
+      <td>{{employee.gender}}</td>
+      <td>{{employee.age}}</td>
+      <td>{{employee.children}}</td>
+      <td>{{employee.rural}}</td>
+      <td>{{employee.executive}}</td>
+      <td>{{employee.employees}}</td>
+      <td>{{employee.wfh_days}}</td>
+      <td>{{employee.more_breaks}}</td>
+      <td>{{employee.wfh_day_condition}}</td>
+      <td>{{employee.productivity}}</td>
+   </tr>
+   {% endfor %}
+</table>
+
 {% endblock %}
