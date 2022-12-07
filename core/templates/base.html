@@ -18,15 +18,29 @@
 
 <body>
 
-   <p>base-template</p>
-
-   <nav>
-      <ul>
-         <li><a href="{% url 'home' %}">Home</a></li>
-         <li><a href="{% url 'analysis' %}">Analysis</a></li>
-         <li><a href="{% url 'employees' %}">Employees</a></li>
-         <li><a href="{% url 'companies' %}">Companies</a></li>
-      </ul>
+   <nav class="navbar navbar-expand-md navbar-light bg-light">
+      <div class="container-fluid">
+         <a class="navbar-brand" href="{% url 'home' %}"><i class="fa-solid fa-house-user"></i></a>
+         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+               <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="{% url 'analysis' %}">Analysis</a>
+               </li>
+               <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                     data-bs-toggle="dropdown" aria-expanded="false">Take the survey!</a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                     <li><a class="dropdown-item" href="{% url 'employees' %}">Employees</a></li>
+                     <li><a class="dropdown-item" href="{% url 'companies' %}">Companies</a></li>
+                  </ul>
+               </li>
+            </ul>
+         </div>
+      </div>
    </nav>
 
    {% block content %}{% endblock %}
