@@ -1,21 +1,25 @@
-# Home office Monitor ✅
+# Home office Advisor ✅
 
 <br><img src="https://media.giphy.com/media/jbw127VLZdYtz61yjS/giphy.gif" width="400"><br><br>
 
 ## What is it about❓
 
 More and more people are working from home.
-With the pandemic, this trend has accelerated again.
-As employees usually think it's great because of their gain in flexibility, many companies are still concerned about productivity.
 
-I want to remove this contradiction and show the following:
+In many areas of work, this has led to happier employees, and more and more companies are now relying on this form of work and offering it, at least part-time.
 
-### 😊 Satisfied employees ➕ increased quality of their work 🫡<br><br>
+But few companies still have doubts and fear a negative impact on productivity.
+
+I want to show that this fear is unfounded and that companies benefit from remote work...
+
+### from happier ➕ more productive employees.🫡<br><br>
 
 ## What should be the outcome? 💡
 
-* A website that shows employees and companies whether home office means happier employees and increased work quality.
-* Both sides should also have the opportunity to fill out surveys and thus continue to expand the database.<br><br>
+An app that continuously collects and processes data from employees, examining the effect of remote work on satisfaction/productivity and any side effects.
+
+* For employees: greater satisfaction
+* For Businesses: increased productivity<br><br>
 
 ## What will this help with? 🎯
 
@@ -30,14 +34,14 @@ I want to remove this contradiction and show the following:
 ## Where does the data come from? 💾
 
 * From my own observations (100 employee survey)
-* Publicly available company surveys (side benefits).<br><br>
+* Continuous data collection through a survey in the app<br><br>
 
 ## Which techniques are used? ⚙️
 
-* Own online survey
+* Online survey (Google forms)
 * Data preparation (Python/Pandas)
 * SQL database (AWS)
-* Backend (Django)
+* Backend (Python/Django)
 * Frontend (HTML, CSS, JavaScript, Bootstrap)
 
 ## Project management? ✔️
