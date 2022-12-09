@@ -4,7 +4,7 @@
 
 <h4>Employee Survey</h4>
 
-<form action="employees/add" method="post">
+<form id="survey-form" action="employees/add" method="post">
    {% csrf_token %}
    <br>
 
@@ -219,7 +219,7 @@
    </fieldset>
 
    <br><br>
-   <input type="submit" value="Submit">
+   <input type="button" value="Submit" onclick="formCheck()">
 </form>
 
 {% endblock %}

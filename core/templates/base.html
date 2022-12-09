@@ -30,13 +30,8 @@
                <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="{% url 'analysis' %}">Analysis</a>
                </li>
-               <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                     data-bs-toggle="dropdown" aria-expanded="false">Take the survey!</a>
-                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                     <li><a class="dropdown-item" href="{% url 'employees' %}">Employees</a></li>
-                     <li><a class="dropdown-item" href="{% url 'companies' %}">Companies</a></li>
-                  </ul>
+               <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="{% url 'employees' %}">Take the survey!</a>
                </li>
             </ul>
          </div>
@@ -49,6 +44,8 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"></script>
 
+   {% load static %}
+   <script src="{% static 'form_validation.js' %}"></script>
 </body>
 
 </html>
