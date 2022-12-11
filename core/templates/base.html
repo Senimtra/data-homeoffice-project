@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,6 +13,9 @@
 
    <!-- ### Include Font Awesome ### -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+   <!-- ### Link own CSS file ### -->
+   <link rel="stylesheet" href="{% static 'styles/styles.css' %}">
 
    <title>Homeoffice Monitor</title>
 </head>
@@ -31,7 +35,7 @@
                   <a class="nav-link active" aria-current="page" href="{% url 'analysis' %}">Analysis</a>
                </li>
                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="{% url 'employees' %}">Take the survey!</a>
+                  <a class="nav-link active" aria-current="page" href="{% url 'survey' %}">Take the survey!</a>
                </li>
             </ul>
          </div>
@@ -44,7 +48,6 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"></script>
 
-   {% load static %}
    <script src="{% static 'form_validation.js' %}"></script>
 </body>
 

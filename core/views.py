@@ -13,15 +13,11 @@ def analysis(request):
    context = {'employees': employees}
    return HttpResponse(template.render(context))
 
-def employees(request):
-   template = loader.get_template('employees.html')
+def survey(request):
+   template = loader.get_template('survey.html')
    return HttpResponse(template.render({}, request))
 
-def companies(request):
-   template = loader.get_template('companies.html')
-   return HttpResponse(template.render())
-
-def add_employee(request):
+def survey_add(request):
    gender = request.POST['gender']
    age = request.POST['age']
    children = request.POST['children']
