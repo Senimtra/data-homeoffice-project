@@ -2,12 +2,16 @@
 
 {% block content %}
 
+<!-- ### Include Chart.js CDN ### -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<br>
+
+<h4>Remote workers age groups</h4>
+
 <div>
    <canvas id="age-groups"></canvas>
 </div>
-
-<!-- ### Include Chart.js CDN ### -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <!-- ### Age groups data (views.py) ### -->
 <script id="age-groups-labels" type="application/json">{{labels|safe}}</script>
@@ -30,5 +34,9 @@
       }
    });
 </script>
+
+<br><br>
+
+<h4>Workers by company size</h4>
 
 {% endblock %}
