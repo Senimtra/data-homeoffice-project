@@ -2,24 +2,33 @@
 
 {% block content %}
 
-<h4>Employee Survey</h4>
-<br>
-<table>
-   {% for employee in employees %}
-   <tr>
-      <td>{{employee.id}}</td>
-      <td>{{employee.gender}}</td>
-      <td>{{employee.age}}</td>
-      <td>{{employee.children}}</td>
-      <td>{{employee.rural}}</td>
-      <td>{{employee.executive}}</td>
-      <td>{{employee.employees}}</td>
-      <td>{{employee.wfh_days}}</td>
-      <td>{{employee.more_breaks}}</td>
-      <td>{{employee.wfh_day_condition}}</td>
-      <td>{{employee.productivity}}</td>
-   </tr>
-   {% endfor %}
-</table>
+<div>
+   <canvas id="age-groups"></canvas>
+</div>
+
+<!-- ### Include Chart.js CDN ### -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- ### Age groups data (views.py) ### -->
+<script id="age-groups-labels" type="application/json">{{labels|safe}}</script>
+<script id="age-groups-data" type="application/json">{{data}}</script>
+
+<!-- ### Age groups donut chart ### -->
+<script>
+   const labels = JSON.parse(document.getElementById('age-groups-labels').textContent);
+   const data = JSON.parse(document.getElementById('age-groups-data').textContent);
+   const age_groups = document.getElementById('age-groups');
+   new Chart(age_groups, {
+      type: 'doughnut',
+      data: {
+         labels: labels,
+         datasets: [{
+            label: 'Observations',
+            data: data,
+            borderWidth: 3
+         }]
+      }
+   });
+</script>
 
 {% endblock %}
