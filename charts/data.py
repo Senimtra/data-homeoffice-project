@@ -21,6 +21,23 @@ def happiness():
    context = {'happiness_labels': json.dumps(labels), 'happiness_data': json.dumps(data)}
    return context
 
+### Employee productivity bar chart ###
+def productivity():
+   productivity = []; labels = []; data = []
+   productivity_query = Employees.objects.values('productivity').annotate(count = Count('productivity'))
+   for level in productivity_query:
+      match level['productivity']:
+         case "I'm a lot more productive": level['rank'] = 1
+         case "I'm more productive": level['rank'] = 2
+         case "I'm as productive as ever": level['rank'] = 3
+         case "I'm less productive": level['rank'] = 4
+         case "I'm a lot less productive": level['rank'] = 5
+   for entry in productivity_query:
+      productivity.append((entry['rank'], entry['productivity'], entry['count']))
+   [(labels.append(el[1]), data.append(el[2])) for el in sorted(productivity)]
+   context = {'productivity_labels': json.dumps(labels), 'productivity_data': json.dumps(data)}
+   return context
+
 ### Age groups donut chart ###
 def age_groups():
    age_groups = []; labels = []; data = []

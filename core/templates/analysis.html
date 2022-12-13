@@ -21,7 +21,6 @@
 <script>
    const happiness_labels = JSON.parse(document.getElementById('happiness-labels').textContent);
    const happiness_data = JSON.parse(document.getElementById('happiness-data').textContent);
-   console.log(happiness_data)
    const employee_happiness = document.getElementById('employee-happiness');
    new Chart(employee_happiness, {
       type: 'bar',
@@ -54,6 +53,75 @@
          }, {
             data: [happiness_data[4]],
             label: happiness_labels[4],
+            borderWidth: 3,
+            borderColor: '#FFF',
+            backgroundColor: "#4BC0C0"
+         }
+         ]
+      },
+      options: {
+         indexAxis: 'y',
+         scales: {
+            x: {
+               max: 100,
+               stacked: true
+            },
+            y: {
+               stacked: true
+            }
+         }
+      }
+   });
+</script>
+
+<br><br>
+
+<h4>Employee productivity</h4>
+
+<div>
+   <canvas id="employee-productivity"></canvas>
+</div>
+
+<!-- ### Employee productivity data (views.py) ### -->
+<script id="productivity-labels" type="application/json">{{productivity_labels|safe}}</script>
+<script id="productivity-data" type="application/json">{{productivity_data}}</script>
+
+<!-- ### Employee productivity bar chart ### -->
+<script>
+   const productivity_labels = JSON.parse(document.getElementById('productivity-labels').textContent);
+   const productivity_data = JSON.parse(document.getElementById('productivity-data').textContent);
+   const employee_productivity = document.getElementById('employee-productivity');
+   new Chart(employee_productivity, {
+      type: 'bar',
+      data: {
+         labels: [''],
+         datasets: [{
+            data: [productivity_data[0]],
+            label: productivity_labels[0],
+            borderWidth: 3,
+            borderColor: '#FFF',
+            backgroundColor: "#36A2EB"
+         }, {
+            data: [productivity_data[1]],
+            label: productivity_labels[1],
+            borderWidth: 3,
+            borderColor: '#FFF',
+            backgroundColor: "#FF6384"
+         }, {
+            data: [productivity_data[2]],
+            label: productivity_labels[2],
+            borderWidth: 3,
+            borderColor: '#FFF',
+            backgroundColor: "#FF9F40"
+         }, {
+            data: [productivity_data[3]],
+            label: productivity_labels[3],
+            borderWidth: 3,
+            borderColor: '#FFF',
+            backgroundColor: "#FFCD56"
+         }, {
+            data: [productivity_data[4]],
+            label: productivity_labels[4],
             borderWidth: 3,
             borderColor: '#FFF',
             backgroundColor: "#4BC0C0"
