@@ -7,6 +7,76 @@
 
 <br>
 
+<h4>Employee happiness</h4>
+
+<div>
+   <canvas id="employee-happiness"></canvas>
+</div>
+
+<!-- ### Employee happiness data (views.py) ### -->
+<script id="happiness-labels" type="application/json">{{happiness_labels|safe}}</script>
+<script id="happiness-data" type="application/json">{{happiness_data}}</script>
+
+<!-- ### Employee happiness bar chart ### -->
+<script>
+   const happiness_labels = JSON.parse(document.getElementById('happiness-labels').textContent);
+   const happiness_data = JSON.parse(document.getElementById('happiness-data').textContent);
+   console.log(happiness_data)
+   const employee_happiness = document.getElementById('employee-happiness');
+   new Chart(employee_happiness, {
+      type: 'bar',
+      data: {
+         labels: [''],
+         datasets: [{
+            data: [happiness_data[0]],
+            label: happiness_labels[0],
+            borderWidth: 3,
+            borderColor: '#FFF',
+            backgroundColor: "#36A2EB"
+         }, {
+            data: [happiness_data[1]],
+            label: happiness_labels[1],
+            borderWidth: 3,
+            borderColor: '#FFF',
+            backgroundColor: "#FF6384"
+         }, {
+            data: [happiness_data[2]],
+            label: happiness_labels[2],
+            borderWidth: 3,
+            borderColor: '#FFF',
+            backgroundColor: "#FF9F40"
+         }, {
+            data: [happiness_data[3]],
+            label: happiness_labels[3],
+            borderWidth: 3,
+            borderColor: '#FFF',
+            backgroundColor: "#FFCD56"
+         }, {
+            data: [happiness_data[4]],
+            label: happiness_labels[4],
+            borderWidth: 3,
+            borderColor: '#FFF',
+            backgroundColor: "#4BC0C0"
+         }
+         ]
+      },
+      options: {
+         indexAxis: 'y',
+         scales: {
+            x: {
+               max: 100,
+               stacked: true
+            },
+            y: {
+               stacked: true
+            }
+         }
+      }
+   });
+</script>
+
+<br><br>
+
 <h4>Employee age groups</h4>
 
 <div>

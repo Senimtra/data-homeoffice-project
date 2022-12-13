@@ -4,6 +4,23 @@ from django.db.models import Count
 import json
 import re
 
+### Employee happiness bar chart ###
+def happiness():
+   happiness = []; labels = []; data = []
+   happiness_query = Employees.objects.values('wfh_day_condition').annotate(count = Count('wfh_day_condition'))
+   for level in happiness_query:
+      match level['wfh_day_condition']:
+         case 'I feel great': level['rank'] = 1
+         case 'I feel better': level['rank'] = 2
+         case 'I feel like I always do': level['rank'] = 3
+         case "I don't feel so good": level['rank'] = 4
+         case 'I feel worse': level['rank'] = 5
+   for entry in happiness_query:
+      happiness.append((entry['rank'], entry['wfh_day_condition'], entry['count']))
+   [(labels.append(el[1]), data.append(el[2])) for el in sorted(happiness)]
+   context = {'happiness_labels': json.dumps(labels), 'happiness_data': json.dumps(data)}
+   return context
+
 ### Age groups donut chart ###
 def age_groups():
    age_groups = []; labels = []; data = []
