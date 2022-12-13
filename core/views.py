@@ -8,6 +8,7 @@ from charts.data import happiness
 from charts.data import productivity
 from charts.data import age_groups
 from charts.data import company_size
+from charts.data import remote_days
 
 ### Home view ###
 def home(request):
@@ -17,7 +18,7 @@ def home(request):
 ### Analysis view ###
 def analysis(request):
    template = loader.get_template('analysis.html')
-   context = happiness() | productivity() | age_groups() | company_size()
+   context = happiness() | productivity() | age_groups() | company_size() | remote_days()
    return HttpResponse(template.render(context, request))
 
 ### Survey view ###

@@ -155,7 +155,7 @@
 <script id="age-groups-labels" type="application/json">{{age_groups_labels|safe}}</script>
 <script id="age-groups-data" type="application/json">{{age_groups_data}}</script>
 
-<!-- ### Age groups donut chart ### -->
+<!-- ### Age groups bar chart ### -->
 <script>
    const age_groups_labels = JSON.parse(document.getElementById('age-groups-labels').textContent);
    const age_groups_data = JSON.parse(document.getElementById('age-groups-data').textContent);
@@ -205,6 +205,36 @@
             label: 'Observations',
             data: company_size_data,
             borderWidth: 3
+         }]
+      }
+   });
+</script>
+
+<br><br>
+
+<h4>Amount remote days</h4>
+
+<div>
+   <canvas id="amount-days"></canvas>
+</div>
+
+<!-- ### Amount remote days data (views.py) ### -->
+<script id="remote-days-labels" type="application/json">{{remote_days_labels|safe}}</script>
+<script id="remote-days-data" type="application/json">{{remote_days_data}}</script>
+
+<!-- ### Amount remote days bar chart ### -->
+<script>
+   const remote_days_labels = JSON.parse(document.getElementById('remote-days-labels').textContent);
+   const remote_days_data = JSON.parse(document.getElementById('remote-days-data').textContent);
+   const amount_days = document.getElementById('amount-days');
+   new Chart(amount_days, {
+      type: 'bar',
+      data: {
+         labels: remote_days_labels,
+         datasets: [{
+            data: remote_days_data,
+            label: "Total",
+            borderWidth: 2
          }]
       }
    });

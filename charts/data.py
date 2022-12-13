@@ -38,7 +38,7 @@ def productivity():
    context = {'productivity_labels': json.dumps(labels), 'productivity_data': json.dumps(data)}
    return context
 
-### Age groups donut chart ###
+### Age groups bar chart ###
 def age_groups():
    age_groups = []; labels = []; data = []
    age_query = Employees.objects.values('age').annotate(count = Count('age'))
@@ -60,4 +60,13 @@ def company_size():
    labels = [label[1] for label in company_size]
    data = [data[2] for data in company_size]
    context = {'company_size_labels': json.dumps(labels), 'company_size_data': json.dumps(data)}
+   return context
+
+### Amount remote days bar chart ###
+def remote_days():
+   remote_days = []; labels = []; data = []
+   days_query = Employees.objects.values('wfh_days').annotate(count = Count('wfh_days'))
+   [remote_days.append((days['wfh_days'], days['count'])) for days in days_query]
+   [(labels.append(days[0]), data.append(days[1])) for days in sorted(remote_days)]
+   context = {'remote_days_labels': json.dumps(labels), 'remote_days_data': json.dumps(data)}
    return context
