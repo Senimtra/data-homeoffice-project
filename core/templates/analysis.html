@@ -161,7 +161,7 @@
    const age_groups_data = JSON.parse(document.getElementById('age-groups-data').textContent);
    const age_groups = document.getElementById('age-groups');
    new Chart(age_groups, {
-      type: 'doughnut',
+      type: 'bar',
       data: {
          labels: age_groups_labels,
          datasets: [{
@@ -169,6 +169,13 @@
             data: age_groups_data,
             borderWidth: 3
          }]
+      },
+      options: {
+         plugins: {
+            legend: {
+               display: false
+            }
+         }
       }
    });
 </script>
