@@ -38,6 +38,14 @@ def productivity():
    context = {'productivity_labels': json.dumps(labels), 'productivity_data': json.dumps(data)}
    return context
 
+### More breaks pie chart ###
+def breaks():
+   labels = []; data = []
+   break_query = Employees.objects.values('more_breaks').annotate(count = Count('more_breaks'))
+   [(labels.append(yes_no['more_breaks']), data.append(yes_no['count'])) for yes_no in break_query]
+   context = {'more_breaks_labels': json.dumps(labels), 'more_breaks_data': json.dumps(data)}
+   return context
+
 ### Age groups bar chart ###
 def age_groups():
    age_groups = []; labels = []; data = []

@@ -145,6 +145,34 @@
 
 <br><br>
 
+<h4>More breaks taken</h4>
+
+<div>
+   <canvas id="more-breaks"></canvas>
+</div>
+
+<!-- ### More breaks data (views.py) ### -->
+<script id="more-breaks-labels" type="application/json">{{more_breaks_labels|safe}}</script>
+<script id="more-breaks-data" type="application/json">{{more_breaks_data}}</script>
+
+<!-- ### More breaks pie chart ### -->
+<script>
+   const more_breaks_labels = JSON.parse(document.getElementById('more-breaks-labels').textContent);
+   const more_breaks_data = JSON.parse(document.getElementById('more-breaks-data').textContent);
+   const more_breaks = document.getElementById('more-breaks');
+   new Chart(more_breaks, {
+      type: 'pie',
+      data: {
+         labels: more_breaks_labels,
+         datasets: [{
+            data: more_breaks_data
+         }]
+      }
+   });
+</script>
+
+<br><br>
+
 <h4>Employee age groups</h4>
 
 <div>
