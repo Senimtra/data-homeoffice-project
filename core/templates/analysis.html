@@ -7,28 +7,28 @@
 
 <br>
 
-<h4>Remote workers age groups</h4>
+<h4>Employee age groups</h4>
 
 <div>
    <canvas id="age-groups"></canvas>
 </div>
 
 <!-- ### Age groups data (views.py) ### -->
-<script id="age-groups-labels" type="application/json">{{labels|safe}}</script>
-<script id="age-groups-data" type="application/json">{{data}}</script>
+<script id="age-groups-labels" type="application/json">{{age_groups_labels|safe}}</script>
+<script id="age-groups-data" type="application/json">{{age_groups_data}}</script>
 
 <!-- ### Age groups donut chart ### -->
 <script>
-   const labels = JSON.parse(document.getElementById('age-groups-labels').textContent);
-   const data = JSON.parse(document.getElementById('age-groups-data').textContent);
+   const age_groups_labels = JSON.parse(document.getElementById('age-groups-labels').textContent);
+   const age_groups_data = JSON.parse(document.getElementById('age-groups-data').textContent);
    const age_groups = document.getElementById('age-groups');
    new Chart(age_groups, {
       type: 'doughnut',
       data: {
-         labels: labels,
+         labels: age_groups_labels,
          datasets: [{
             label: 'Observations',
-            data: data,
+            data: age_groups_data,
             borderWidth: 3
          }]
       }
@@ -37,6 +37,32 @@
 
 <br><br>
 
-<h4>Workers by company size</h4>
+<h4>Company sizes</h4>
+
+<div>
+   <canvas id="company-size"></canvas>
+</div>
+
+<!-- ### Company size data (views.py) ### -->
+<script id="company-size-labels" type="application/json">{{company_size_labels|safe}}</script>
+<script id="company-size-data" type="application/json">{{company_size_data}}</script>
+
+<!-- ### Company size donut chart ### -->
+<script>
+   const company_size_labels = JSON.parse(document.getElementById('company-size-labels').textContent);
+   const company_size_data = JSON.parse(document.getElementById('company-size-data').textContent);
+   const company_size = document.getElementById('company-size');
+   new Chart(company_size, {
+      type: 'doughnut',
+      data: {
+         labels: company_size_labels,
+         datasets: [{
+            label: 'Observations',
+            data: company_size_data,
+            borderWidth: 3
+         }]
+      }
+   });
+</script>
 
 {% endblock %}
