@@ -282,21 +282,26 @@
 </div>
 
 <!-- ### Amount remote days data (views.py) ### -->
-<script id="remote-days-labels" type="application/json">{{remote_days_labels|safe}}</script>
 <script id="remote-days-data" type="application/json">{{remote_days_data}}</script>
+<script id="remote-days-rural" type="application/json">{{remote_days_rural}}</script>
 
 <!-- ### Amount remote days bar chart ### -->
 <script>
-   const remote_days_labels = JSON.parse(document.getElementById('remote-days-labels').textContent);
    const remote_days_data = JSON.parse(document.getElementById('remote-days-data').textContent);
+   const remote_days_rural = JSON.parse(document.getElementById('remote-days-rural').textContent);
+   console.log(remote_days_rural)
    const amount_days = document.getElementById('amount-days');
    new Chart(amount_days, {
       type: 'bar',
       data: {
-         labels: remote_days_labels,
+         labels: [1, 2, 3, 4, 5],
          datasets: [{
             data: remote_days_data,
-            label: "Total",
+            label: 'Total',
+            borderWidth: 2
+         }, {
+            data: remote_days_rural,
+            label: 'Rural',
             borderWidth: 2
          }]
       }

@@ -81,9 +81,16 @@ def company_size():
 
 ### Amount remote days bar chart ###
 def remote_days():
-   remote_days = []; labels = []; data = []
+   remote_days = []; data = []
+   rural_days = {1: 0, 2: 0, 3: 0, 4: 0, 5: 0}
+   # Remote days total
    days_query = Employees.objects.values('wfh_days').annotate(count = Count('wfh_days'))
    [remote_days.append((days['wfh_days'], days['count'])) for days in days_query]
-   [(labels.append(days[0]), data.append(days[1])) for days in sorted(remote_days)]
-   context = {'remote_days_labels': json.dumps(labels), 'remote_days_data': json.dumps(data)}
+   [data.append(days[1]) for days in sorted(remote_days)]
+   # Remote days rural
+   rural_query = Employees.objects.filter(rural = 'Yes').values('wfh_days').annotate(count = Count('wfh_days'))
+   for entry in rural_query:
+      rural_days[entry['wfh_days']] = entry['count']
+   # Set up context
+   context = {'remote_days_data': json.dumps(data), 'remote_days_rural': json.dumps(list(rural_days.values()))}
    return context
