@@ -285,12 +285,14 @@
 <script id="remote-days-data" type="application/json">{{remote_days_data}}</script>
 <script id="remote-days-children" type="application/json">{{remote_days_children}}</script>
 <script id="remote-days-rural" type="application/json">{{remote_days_rural}}</script>
+<script id="remote-days-executive" type="application/json">{{remote_days_executive}}</script>
 
 <!-- ### Amount remote days bar chart ### -->
 <script>
    const remote_days_data = JSON.parse(document.getElementById('remote-days-data').textContent);
    const remote_days_children = JSON.parse(document.getElementById('remote-days-children').textContent);
    const remote_days_rural = JSON.parse(document.getElementById('remote-days-rural').textContent);
+   const remote_days_executive = JSON.parse(document.getElementById('remote-days-executive').textContent);
    const amount_days = document.getElementById('amount-days');
    new Chart(amount_days, {
       type: 'bar',
@@ -307,6 +309,10 @@
          }, {
             data: remote_days_rural,
             label: 'Rural',
+            borderWidth: 2
+         }, {
+            data: remote_days_executive,
+            label: 'Executive',
             borderWidth: 2
          }]
       }
