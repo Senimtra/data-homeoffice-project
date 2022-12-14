@@ -83,14 +83,19 @@ def company_size():
 def remote_days():
    remote_days = []; data = []
    rural_days = {1: 0, 2: 0, 3: 0, 4: 0, 5: 0}
+   children_days = {1: 0, 2: 0, 3: 0, 4: 0, 5: 0}
    # Remote days total
    days_query = Employees.objects.values('wfh_days').annotate(count = Count('wfh_days'))
    [remote_days.append((days['wfh_days'], days['count'])) for days in days_query]
    [data.append(days[1]) for days in sorted(remote_days)]
+   # Remote days children
+   children_query = Employees.objects.filter(children = 'Yes').values('wfh_days').annotate(count = Count('wfh_days'))
+   for entry in children_query:
+      children_days[entry['wfh_days']] = entry['count']
    # Remote days rural
    rural_query = Employees.objects.filter(rural = 'Yes').values('wfh_days').annotate(count = Count('wfh_days'))
    for entry in rural_query:
       rural_days[entry['wfh_days']] = entry['count']
    # Set up context
-   context = {'remote_days_data': json.dumps(data), 'remote_days_rural': json.dumps(list(rural_days.values()))}
+   context = {'remote_days_data': json.dumps(data), 'remote_days_rural': json.dumps(list(rural_days.values())), 'remote_days_children': json.dumps(list(children_days.values()))}
    return context
