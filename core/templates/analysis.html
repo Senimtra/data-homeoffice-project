@@ -224,7 +224,7 @@
             label: 'Females',
             data: age_groups_females,
             borderWidth: 3,
-            backgroundColor: 'rgba(255, 99, 132, 1)',
+            backgroundColor: '#FF6384',
             categoryPercentage: 0.5
          }, {
             label: 'Males',
@@ -299,21 +299,29 @@
       data: {
          labels: [1, 2, 3, 4, 5],
          datasets: [{
-            data: remote_days_data,
-            label: 'Total',
-            borderWidth: 2
-         }, {
             data: remote_days_children,
             label: 'Children',
-            borderWidth: 2
+            borderWidth: 2,
+            backgroundColor: 'rgb(255,99,132,1)',
+            categoryPercentage: 0.6,
          }, {
             data: remote_days_rural,
             label: 'Rural',
-            borderWidth: 2
+            borderWidth: 2,
+            backgroundColor: 'rgb(255,159,64,1)',
+            categoryPercentage: 0.6,
          }, {
             data: remote_days_executive,
             label: 'Executive',
-            borderWidth: 2
+            borderWidth: 2,
+            backgroundColor: 'rgb(255,205,86,1)',
+            categoryPercentage: 0.6,
+         }, {
+            data: remote_days_data,
+            label: 'Total',
+            borderWidth: 2,
+            backgroundColor: 'rgb(54,162,235,1)',
+            grouped: false
          }]
       }
    });
