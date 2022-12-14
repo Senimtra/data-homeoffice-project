@@ -180,28 +180,35 @@
 </div>
 
 <!-- ### Age groups data (views.py) ### -->
-<script id="age-groups-labels" type="application/json">{{age_groups_labels|safe}}</script>
-<script id="age-groups-data" type="application/json">{{age_groups_data}}</script>
+<script id="age-groups-females" type="application/json">{{age_groups_females}}</script>
+<script id="age-groups-males" type="application/json">{{age_groups_males}}</script>
 
 <!-- ### Age groups bar chart ### -->
 <script>
-   const age_groups_labels = JSON.parse(document.getElementById('age-groups-labels').textContent);
-   const age_groups_data = JSON.parse(document.getElementById('age-groups-data').textContent);
+   const age_groups_females = JSON.parse(document.getElementById('age-groups-females').textContent);
+   const age_groups_males = JSON.parse(document.getElementById('age-groups-males').textContent);
    const age_groups = document.getElementById('age-groups');
    new Chart(age_groups, {
       type: 'bar',
       data: {
-         labels: age_groups_labels,
+         labels: ['< 25', '25 - 34', '35 - 44', '45 - 54', '55 - 64', '65+'],
          datasets: [{
-            label: 'Observations',
-            data: age_groups_data,
-            borderWidth: 3
+            label: 'Females',
+            data: age_groups_females,
+            borderWidth: 3,
+            backgroundColor: 'rgba(255, 99, 132, 1)',
+            categoryPercentage: 0.5
+         }, {
+            label: 'Males',
+            data: age_groups_males,
+            borderWidth: 3,
+            backgroundColor: '#36A2EB'
          }]
       },
       options: {
-         plugins: {
-            legend: {
-               display: false
+         scales: {
+            x: {
+               stacked: true
             }
          }
       }

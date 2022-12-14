@@ -48,14 +48,16 @@ def breaks():
 
 ### Age groups bar chart ###
 def age_groups():
-   age_groups = []; labels = []; data = []
-   age_query = Employees.objects.values('age').annotate(count = Count('age'))
+   age_groups = []; females = []; males = []
+   age_query = Employees.objects.values('gender', 'age').annotate(count = Count('age'))
    for group in age_query:
-      age_groups.append((int(re.findall('\d{2}', group['age'])[-1]), group['age'], group['count']))
-   age_groups = sorted(age_groups)
-   labels = [label[1] for label in age_groups]
-   data = [data[2] for data in age_groups]
-   context = {'age_groups_labels': json.dumps(labels), 'age_groups_data': json.dumps(data)}
+      age_groups.append((int(re.findall('\d{2}', group['age'])[-1]), group['gender'], group['age'], group['count']))
+   for group in age_groups:
+      females.append(group) if group[1] == 'Female' else males.append(group)
+   females = [group[3] for group in sorted(females)]
+   males = [group[3] for group in sorted(males)]
+   print(females, males)
+   context = {'age_groups_females': json.dumps(females), 'age_groups_males': json.dumps(males)}
    return context
 
 ### Company size donut chart ###
