@@ -46,6 +46,14 @@ def breaks():
    context = {'more_breaks_labels': json.dumps(labels), 'more_breaks_data': json.dumps(data)}
    return context
 
+### Gender distribution pie chart ###
+def gender():
+   labels = []; data = []
+   gender_query = Employees.objects.values('gender').annotate(count = Count('gender'))
+   [(labels.append(option['gender']), data.append(option['count'])) for option in gender_query]
+   context = {'gender_distribution_labels': json.dumps(labels), 'gender_distribution_data': json.dumps(data)}
+   return context
+
 ### Age groups bar chart ###
 def age_groups():
    age_groups = []; females = []; males = []
@@ -56,7 +64,6 @@ def age_groups():
       females.append(group) if group[1] == 'Female' else males.append(group)
    females = [group[3] for group in sorted(females)]
    males = [group[3] for group in sorted(males)]
-   print(females, males)
    context = {'age_groups_females': json.dumps(females), 'age_groups_males': json.dumps(males)}
    return context
 

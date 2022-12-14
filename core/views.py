@@ -3,13 +3,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from django.urls import reverse
 from .models import Employees
-
-from charts.data import happiness
-from charts.data import productivity
-from charts.data import breaks
-from charts.data import age_groups
-from charts.data import company_size
-from charts.data import remote_days
+from charts import data
 
 ### Home view ###
 def home(request):
@@ -19,7 +13,7 @@ def home(request):
 ### Analysis view ###
 def analysis(request):
    template = loader.get_template('analysis.html')
-   context = happiness() | productivity() | breaks() | age_groups() | company_size() | remote_days()
+   context = data.happiness() | data.productivity() | data.breaks() | data.gender() | data.age_groups() | data.company_size() | data.remote_days()
    return HttpResponse(template.render(context, request))
 
 ### Survey view ###

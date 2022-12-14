@@ -173,6 +173,34 @@
 
 <br><br>
 
+<h4>Gender distribution</h4>
+
+<div>
+   <canvas id="gender-distribution"></canvas>
+</div>
+
+<!-- ### Gender distribution data (views.py) ### -->
+<script id="gender-distribution-labels" type="application/json">{{gender_distribution_labels|safe}}</script>
+<script id="gender-distribution-data" type="application/json">{{gender_distribution_data}}</script>
+
+<!-- ### Gender distribution pie chart ### -->
+<script>
+   const gender_distribution_labels = JSON.parse(document.getElementById('gender-distribution-labels').textContent);
+   const gender_distribution_data = JSON.parse(document.getElementById('gender-distribution-data').textContent);
+   const gender_distribution = document.getElementById('gender-distribution');
+   new Chart(gender_distribution, {
+      type: 'pie',
+      data: {
+         labels: gender_distribution_labels,
+         datasets: [{
+            data: gender_distribution_data
+         }]
+      }
+   });
+</script>
+
+<br><br>
+
 <h4>Employee age groups</h4>
 
 <div>
