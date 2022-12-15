@@ -6,137 +6,113 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <div class="container">
-   <div class="row">
+   <div class="row chart-row">
 
-      <div class="col-lg-4 col-md-6 chart-container">
-         <h4>Employee happiness</h4>
-         <div>
-            <canvas id="employee-happiness"></canvas>
+      <div class="col-lg-4 col-md-6 chart-container first-chart">
+         <div class="card chart-card">
+            <h4>Employee happiness</h4>
+            <div>
+               <canvas id="employee-happiness"></canvas>
+            </div>
          </div>
 
          <!-- ### Employee happiness data (views.py) ### -->
          <script id="happiness-labels" type="application/json">{{happiness_labels|safe}}</script>
+         <script id="productivity-labels" type="application/json">{{productivity_labels|safe}}</script>
          <script id="happiness-data" type="application/json">{{happiness_data}}</script>
+         <script id="productivity-data" type="application/json">{{productivity_data}}</script>
 
          <!-- ### Employee happiness bar chart ### -->
          <script>
             const happiness_labels = JSON.parse(document.getElementById('happiness-labels').textContent);
             const happiness_data = JSON.parse(document.getElementById('happiness-data').textContent);
+            const productivity_labels = JSON.parse(document.getElementById('productivity-labels').textContent);
+            const productivity_data = JSON.parse(document.getElementById('productivity-data').textContent);
             const employee_happiness = document.getElementById('employee-happiness');
             new Chart(employee_happiness, {
                type: 'bar',
                data: {
-                  labels: [''],
+                  labels: ['Happiness                Productivity'],
                   datasets: [{
                      data: [happiness_data[0]],
                      label: happiness_labels[0],
-                     borderWidth: 3,
+                     borderWidth: 2,
                      borderColor: '#FFF',
                      backgroundColor: "#36A2EB"
                   }, {
                      data: [happiness_data[1]],
                      label: happiness_labels[1],
-                     borderWidth: 3,
+                     borderWidth: 2,
                      borderColor: '#FFF',
                      backgroundColor: "#FF6384"
                   }, {
                      data: [happiness_data[2]],
                      label: happiness_labels[2],
-                     borderWidth: 3,
+                     borderWidth: 2,
                      borderColor: '#FFF',
                      backgroundColor: "#FF9F40"
                   }, {
                      data: [happiness_data[3]],
                      label: happiness_labels[3],
-                     borderWidth: 3,
+                     borderWidth: 2,
                      borderColor: '#FFF',
                      backgroundColor: "#FFCD56"
                   }, {
                      data: [happiness_data[4]],
                      label: happiness_labels[4],
-                     borderWidth: 3,
+                     borderWidth: 2,
                      borderColor: '#FFF',
                      backgroundColor: "#4BC0C0"
-                  }
-                  ]
-               },
-               options: {
-                  indexAxis: 'y',
-                  scales: {
-                     x: {
-                        max: 100,
-                        stacked: true
-                     },
-                     y: {
-                        stacked: true
-                     }
-                  }
-               }
-            });
-         </script>
-      </div>
-
-      <div class="col-lg-4 col-md-6 chart-container">
-         <h4>Employee productivity</h4>
-         <div>
-            <canvas id="employee-productivity"></canvas>
-         </div>
-
-         <!-- ### Employee productivity data (views.py) ### -->
-         <script id="productivity-labels" type="application/json">{{productivity_labels|safe}}</script>
-         <script id="productivity-data" type="application/json">{{productivity_data}}</script>
-
-         <!-- ### Employee productivity bar chart ### -->
-         <script>
-            const productivity_labels = JSON.parse(document.getElementById('productivity-labels').textContent);
-            const productivity_data = JSON.parse(document.getElementById('productivity-data').textContent);
-            const employee_productivity = document.getElementById('employee-productivity');
-            new Chart(employee_productivity, {
-               type: 'bar',
-               data: {
-                  labels: [''],
-                  datasets: [{
+                  }, {
                      data: [productivity_data[0]],
                      label: productivity_labels[0],
-                     borderWidth: 3,
+                     borderWidth: 2,
                      borderColor: '#FFF',
                      backgroundColor: "#36A2EB"
                   }, {
                      data: [productivity_data[1]],
                      label: productivity_labels[1],
-                     borderWidth: 3,
+                     borderWidth: 2,
                      borderColor: '#FFF',
                      backgroundColor: "#FF6384"
                   }, {
                      data: [productivity_data[2]],
                      label: productivity_labels[2],
-                     borderWidth: 3,
+                     borderWidth: 2,
                      borderColor: '#FFF',
                      backgroundColor: "#FF9F40"
                   }, {
                      data: [productivity_data[3]],
                      label: productivity_labels[3],
-                     borderWidth: 3,
+                     borderWidth: 2,
                      borderColor: '#FFF',
                      backgroundColor: "#FFCD56"
                   }, {
                      data: [productivity_data[4]],
                      label: productivity_labels[4],
-                     borderWidth: 3,
+                     borderWidth: 2,
                      borderColor: '#FFF',
                      backgroundColor: "#4BC0C0"
                   }
                   ]
                },
                options: {
-                  indexAxis: 'y',
+                  responsive: true,
+                  maintainAspectRatio: false,
                   scales: {
                      x: {
-                        max: 100,
-                        stacked: true
-                     },
-                     y: {
-                        stacked: true
+                        max: 100
+                     }
+                  },
+                  plugins: {
+                     legend: {
+                        labels: {
+                           filter: (legendItem) => {
+                              console.log(legendItem);
+                              if (legendItem.text == 'I feel great') return true;         
+                           }
+                        },
+                        position: 'right'
                      }
                   }
                }
@@ -145,9 +121,11 @@
       </div>
 
       <div class="col-lg-4 col-md-6 chart-container">
-         <h4>More breaks taken</h4>
-         <div>
-            <canvas id="more-breaks"></canvas>
+         <div class="card chart-card">
+            <h4>More breaks taken</h4>
+            <div>
+               <canvas id="more-breaks"></canvas>
+            </div>
          </div>
 
          <!-- ### More breaks data (views.py) ### -->
@@ -162,19 +140,32 @@
             new Chart(more_breaks, {
                type: 'pie',
                data: {
-                  labels: more_breaks_labels,
+                  labels: more_breaks_labels.reverse(),
                   datasets: [{
-                     data: more_breaks_data
+                     data: more_breaks_data.reverse(),
+                     backgroundColor: ['#49ba49', '#ff5c5c'],
+                     borderWidth: 2
                   }]
+               },
+               options: {
+                  responsive: true,
+                  maintainAspectRatio: false,
+                  plugins: {
+                     legend: {
+                        position: 'right'
+                     }
+                  }
                }
             });
          </script>
       </div>
 
       <div class="col-lg-4 col-md-6 chart-container">
-         <h4>Gender distribution</h4>
-         <div>
-            <canvas id="gender-distribution"></canvas>
+         <div class="card chart-card">
+            <h4>Gender distribution</h4>
+            <div>
+               <canvas id="gender-distribution"></canvas>
+            </div>
          </div>
 
          <!-- ### Gender distribution data (views.py) ### -->
@@ -191,17 +182,30 @@
                data: {
                   labels: gender_distribution_labels,
                   datasets: [{
-                     data: gender_distribution_data
+                     data: gender_distribution_data,
+                     backgroundColor: ['#fd7c98', '#36A2EB'],
+                     borderWidth: 2
                   }]
+               },
+               options: {
+                  responsive: true,
+                  maintainAspectRatio: false,
+                  plugins: {
+                     legend: {
+                        position: 'right'
+                     }
+                  }
                }
             });
          </script>
       </div>
 
       <div class="col-lg-4 col-md-6 chart-container">
-         <h4>Employee age groups</h4>
-         <div>
-            <canvas id="age-groups"></canvas>
+         <div class="card chart-card">
+            <h4>Employee age groups</h4>
+            <div>
+               <canvas id="age-groups"></canvas>
+            </div>
          </div>
 
          <!-- ### Age groups data (views.py) ### -->
@@ -220,17 +224,21 @@
                   datasets: [{
                      label: 'Females',
                      data: age_groups_females,
-                     borderWidth: 3,
-                     backgroundColor: '#FF6384',
-                     categoryPercentage: 0.5
+                     backgroundColor: '#fd7c98',
+                     borderColor: 'white',
+                     borderWidth: 2,
+                     categoryPercentage: 0.4
                   }, {
                      label: 'Males',
                      data: age_groups_males,
-                     borderWidth: 3,
-                     backgroundColor: '#36A2EB'
+                     backgroundColor: '#36A2EB',
+                     borderColor: 'white',
+                     borderWidth: 2
                   }]
                },
                options: {
+                  responsive: true,
+                  maintainAspectRatio: false,
                   scales: {
                      x: {
                         stacked: true
@@ -242,9 +250,11 @@
       </div>
 
       <div class="col-lg-4 col-md-6 chart-container">
-         <h4>Company sizes</h4>
-         <div>
-            <canvas id="company-size"></canvas>
+         <div class="card chart-card">
+            <h4>Company sizes</h4>
+            <div>
+               <canvas id="company-size"></canvas>
+            </div>
          </div>
 
          <!-- ### Company size data (views.py) ### -->
@@ -263,17 +273,28 @@
                   datasets: [{
                      label: 'Observations',
                      data: company_size_data,
-                     borderWidth: 3
+                     backgroundColor: ['#F2F2E0', '#E0CBB6', '#CDA68F', '#B58F79', '#9E7964'],
+                     borderWidth: 2
                   }]
+               },
+               options: {
+                  responsive: true,
+                  maintainAspectRatio: false,
+                  plugins: {
+                     legend: {
+                        position: 'right'
+                     }
+                  }
                }
             });
          </script>
       </div>
       <div class="col-lg-4 col-md-6 chart-container">
-         <h4>Amount remote days</h4>
-
-         <div>
-            <canvas id="amount-days"></canvas>
+         <div class="card chart-card">
+            <h4>Amount remote days</h4>
+            <div>
+               <canvas id="amount-days"></canvas>
+            </div>
          </div>
 
          <!-- ### Amount remote days data (views.py) ### -->
@@ -296,28 +317,41 @@
                   datasets: [{
                      data: remote_days_children,
                      label: 'Children',
-                     borderWidth: 2,
                      backgroundColor: 'rgb(255,99,132,1)',
-                     categoryPercentage: 0.6,
+                     borderColor: 'white',
+                     borderWidth: 2
                   }, {
                      data: remote_days_rural,
                      label: 'Rural',
-                     borderWidth: 2,
                      backgroundColor: 'rgb(255,159,64,1)',
-                     categoryPercentage: 0.6,
+                     borderColor: 'white',
+                     borderWidth: 2
                   }, {
                      data: remote_days_executive,
                      label: 'Executive',
-                     borderWidth: 2,
                      backgroundColor: 'rgb(255,205,86,1)',
-                     categoryPercentage: 0.6,
+                     borderColor: 'white',
+                     borderWidth: 2
                   }, {
                      data: remote_days_data,
                      label: 'Total',
+                     borderColor: 'white',
                      borderWidth: 2,
-                     backgroundColor: 'rgb(54,162,235,1)',
-                     grouped: false
+                     backgroundColor: 'rgb(54,162,235,1)'
                   }]
+               },
+               options: {
+                  responsive: true,
+                  maintainAspectRatio: false,
+                  plugins: {
+                     legend: {
+                        labels: {
+                           filter: function (label) {
+                              if (label.text != 'Total') return true;
+                           }
+                        }
+                     }
+                  }
                }
             });
          </script>

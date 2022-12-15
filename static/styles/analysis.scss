@@ -1,7 +1,30 @@
-.chart-container {
-	border: 1px solid grey;
+/* ### Analysis styles ### */
+
+.chart-row {
+	margin-top: 2em;
 }
 
 canvas {
-	height: 250px !important;
+	height: 210px !important;
+}
+
+.chart-card {
+	color: black;
+	padding: 1em 2.5em;
+	margin-top: 1em;
+	background-color: #e5dcfa;
+	border: 0.4em solid #563c9f;
+	border-radius: 10px;
+	font-size: 0.9em;
+	width: 100%;
+	box-shadow: 1px 1px 1px 1px #303030;
+	height: 310px;
+	h4 {
+		color: #432b88;
+		font-weight: bold;
+		text-align: left;
+		padding-left: 0 !important;
+		padding-top: 0 !important;
+		white-space: nowrap;
+	}
 }

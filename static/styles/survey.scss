@@ -10,15 +10,17 @@
 }
 
 .survey-card {
+	color: #48a9ea;
+	color: #fd7c98;
 	color: black;
 	padding: 1em 2.5em;
 	margin-top: 1em;
 	background-color: #fcfbfc;
-	border: 0.4em solid #311f65;
+	border: 0.4em solid #563c9f;
 	border-radius: 10px;
 	font-size: 0.9em;
 	width: 100%;
-	box-shadow: 2px 2px 2px #232323;
+	box-shadow: 1px 1px 1px 1px #303030;
 	h4 {
 		color: #432b88;
 		font-weight: bold;
@@ -31,7 +33,9 @@
 h2 {
 	color: #432b88;
 	font-weight: bold;
-	margin-bottom: 0.9em;
+	font-size: 2.8em;
+	margin-bottom: 0.5em;
+	font-family: 'Yanone';
 }
 
 .btn-survey {
