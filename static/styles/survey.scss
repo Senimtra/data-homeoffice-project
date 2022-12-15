@@ -1,0 +1,37 @@
+/* ### Survey styles ### */
+
+.survey-head {
+	margin-top: 3em !important;
+	background-color: #d0c3f8 !important;
+	p {
+		font-size: 1.15em;
+	}
+}
+
+.survey-card {
+	color: black;
+	padding: 1.5em 2.5em;
+	margin-top: 1em;
+	background-color: #fcfbfc;
+	font-size: 0.9em;
+	width: 100%;
+	h4 {
+		color: #432b88;
+		font-weight: bold;
+		text-align: left;
+		padding-left: 0 !important;
+	}
+}
+
+h2 {
+	color: #432b88;
+	font-weight: bold;
+	margin-bottom: 0.9em;
+}
+
+.btn-survey {
+	color: white;
+	background-color: #37d247;
+	width: 10.5em;
+	margin: 1.5em 0 5em;
+}

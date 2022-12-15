@@ -2,224 +2,243 @@
 
 {% block content %}
 
-<h4>Survey</h4>
-
 <form id="survey-form" action="survey/add" method="post">
    {% csrf_token %}
-   <br>
 
-   <fieldset>
-      <p>To which gender identity do you most identify</p>
-      <div>
-         <input type="radio" id="female" name="gender" value="Female">
-         <label for="female">Female</label>
+   <div class="container">
+      <div class="row">
+         <div class="col-12">
+            <div class="card survey-card survey-head">
+               <h2>Employee survey</h2>
+               <p>What is your personal experience with remote work?</p>
+               <p>Thanks for participating!</p>
+            </div>
+         </div>
+         <div class="col-lg-6 d-flex align-items-stretch">
+            <div class="card survey-card">
+               <h4>To which gender identity do you most identify?</h4>
+               <fieldset>
+                  <div>
+                     <input type="radio" id="female" name="gender" value="Female">
+                     <label for="female">Female</label>
+                  </div>
+                  <div>
+                     <input type="radio" id="male" name="gender" value="Male">
+                     <label for="male">Male</label>
+                  </div>
+                  <div>
+                     <input type="radio" id="non-binary" name="gender" value="Non-binary">
+                     <label for="non-binary">Non-binary</label>
+                  </div>
+                  <div>
+                     <input type="radio" id="no-say" name="gender" value="I don't want to specify">
+                     <label for="no-say">I don't want to specify</label>
+                  </div>
+               </fieldset>
+            </div>
+         </div>
+         <div class="col-lg-6 d-flex align-items-stretch">
+            <div class="card survey-card">
+               <h4>Which age group describes you?</h4>
+               <fieldset>
+                  <div>
+                     <input type="radio" id="<25" name="age" value="<25">
+                     <label for="<25">&lt; 25</label>
+                  </div>
+                  <div>
+                     <input type="radio" id="25-34" name="age" value="25-34">
+                     <label for="25-34">25 - 34</label>
+                  </div>
+                  <div>
+                     <input type="radio" id="35-44" name="age" value="35-44">
+                     <label for="35-44">35 - 44</label>
+                  </div>
+                  <div>
+                     <input type="radio" id="45-54" name="age" value="45-54">
+                     <label for="45-54">45 - 54</label>
+                  </div>
+                  <div>
+                     <input type="radio" id="55-64" name="age" value="55-64">
+                     <label for="55-64">55 - 64</label>
+                  </div>
+                  <div>
+                     <input type="radio" id="65+" name="age" value="65+">
+                     <label for="65+">65 +</label>
+                  </div>
+               </fieldset>
+            </div>
+         </div>
+         <div class="col-lg-6 d-flex align-items-stretch">
+            <div class="card survey-card">
+               <h4>Are children under the age of 18 living in your home?</h4>
+               <fieldset>
+                  <div>
+                     <input type="radio" id="yes" name="children" value="Yes">
+                     <label for="yes">Yes</label>
+                  </div>
+                  <div>
+                     <input type="radio" id="no" name="children" value="No">
+                     <label for="no">No</label>
+                  </div>
+               </fieldset>
+            </div>
+         </div>
+         <div class="col-lg-6 d-flex align-items-stretch">
+            <div class="card survey-card">
+               <h4>Do you live in a rural environment?</h4>
+               <fieldset>
+                  <div>
+                     <input type="radio" id="yes" name="rural" value="Yes">
+                     <label for="yes">Yes</label>
+                  </div>
+                  <div>
+                     <input type="radio" id="no" name="rural" value="No">
+                     <label for="no">No</label>
+                  </div>
+               </fieldset>
+            </div>
+         </div>
+         <div class="col-lg-6 d-flex align-items-stretch">
+            <div class="card survey-card">
+               <h4>Are you managing employees?</h4>
+               <fieldset>
+                  <div>
+                     <input type="radio" id="yes" name="executive" value="Yes">
+                     <label for="yes">Yes</label>
+                  </div>
+                  <div>
+                     <input type="radio" id="no" name="executive" value="No">
+                     <label for="no">No</label>
+                  </div>
+               </fieldset>
+            </div>
+         </div>
+         <div class="col-lg-6 d-flex align-items-stretch">
+            <div class="card survey-card">
+               <h4>How many employees are there in your company?</h4>
+               <fieldset>
+                  <div>
+                     <input type="radio" id="1" name="employees" value="1">
+                     <label for="1">1</label>
+                  </div>
+                  <div>
+                     <input type="radio" id="2-10" name="employees" value="2-10">
+                     <label for="2-10">2 - 10</label>
+                  </div>
+                  <div>
+                     <input type="radio" id="11-50" name="employees" value="11-50">
+                     <label for="11-50">11 - 50</label>
+                  </div>
+                  <div>
+                     <input type="radio" id="51-500" name="employees" value="51-500">
+                     <label for="51-500">51 - 500</label>
+                  </div>
+                  <div>
+                     <input type="radio" id=">500" name="employees" value=">500">
+                     <label for=">500">> 500</label>
+                  </div>
+               </fieldset>
+            </div>
+         </div>
+         <div class="col-lg-6 d-flex align-items-stretch">
+            <div class="card survey-card">
+               <h4>How many days a week do you work from home on average?</h4>
+               <fieldset>
+                  <div>
+                     <input type="radio" id="1" name="wfh_days" value="1">
+                     <label for="1">1</label>
+                  </div>
+                  <div>
+                     <input type="radio" id="2" name="wfh_days" value="2">
+                     <label for="2">2</label>
+                  </div>
+                  <div>
+                     <input type="radio" id="3" name="wfh_days" value="3">
+                     <label for="3">3</label>
+                  </div>
+                  <div>
+                     <input type="radio" id="4" name="wfh_days" value="4">
+                     <label for="4">4</label>
+                  </div>
+                  <div>
+                     <input type="radio" id="5" name="wfh_days" value="5">
+                     <label for="5">5</label>
+                  </div>
+               </fieldset>
+            </div>
+         </div>
+         <div class="col-lg-6 d-flex align-items-stretch">
+            <div class="card survey-card">
+               <h4>Do you take more breaks when working from home?</h4>
+               <fieldset>
+                  <div>
+                     <input type="radio" id="yes" name="more_breaks" value="Yes">
+                     <label for="yes">Yes</label>
+                  </div>
+                  <div>
+                     <input type="radio" id="no" name="more_breaks" value="No">
+                     <label for="no">No</label>
+                  </div>
+               </fieldset>
+            </div>
+         </div>
+         <div class="col-lg-6 d-flex align-items-stretch">
+            <div class="card survey-card">
+               <h4>How do you feel when you work from home?</h4>
+               <fieldset>
+                  <div>
+                     <input type="radio" id="feel-great" name="wfh_day_condition" value="I feel great">
+                     <label for="feel-great">I feel great!</label>
+                  </div>
+                  <div>
+                     <input type="radio" id="feel-better" name="wfh_day_condition" value="I feel better">
+                     <label for="feel-better">I feel better!</label>
+                  </div>
+                  <div>
+                     <input type="radio" id="always" name="wfh_day_condition" value="I feel like I always do">
+                     <label for="always">I feel like I always do.</label>
+                  </div>
+                  <div>
+                     <input type="radio" id="not-good" name="wfh_day_condition" value="I don't feel so good">
+                     <label for="not-good">I don't feel so good!</label>
+                  </div>
+                  <div>
+                     <input type="radio" id="worse" name="wfh_day_condition" value="I feel worse">
+                     <label for="worse">I feel worse!</label>
+                  </div>
+               </fieldset>
+            </div>
+         </div>
+         <div class="col-lg-6 d-flex align-items-stretch">
+            <div class="card survey-card">
+               <h4>How do you feel about your productivity when you work from home?</h4>
+               <fieldset>
+                  <div>
+                     <input type="radio" id="lot-more" name="productivity" value="I'm a lot more productive">
+                     <label for="lot-more">I'm a lot more productive!</label>
+                  </div>
+                  <div>
+                     <input type="radio" id="more" name="productivity" value="I'm more productive">
+                     <label for="more">I'm more productive!</label>
+                  </div>
+                  <div>
+                     <input type="radio" id="as-ever" name="productivity" value="I'm as productive as ever">
+                     <label for="as-ever">I'm as productive as ever.</label>
+                  </div>
+                  <div>
+                     <input type="radio" id="less" name="productivity" value="I'm less productive">
+                     <label for="less">I'm less productive!</label>
+                  </div>
+                  <div>
+                     <input type="radio" id="lot-less" name="productivity" value="I'm a lot less productive">
+                     <label for="lot-less">I'm a lot less productive!</label>
+                  </div>
+               </fieldset>
+            </div>
+         </div>
+         <div><input type="button" value="Submit survey" class="btn btn-survey" onclick="formCheck()"></div>
       </div>
-      <div>
-         <input type="radio" id="male" name="gender" value="Male">
-         <label for="male">Male</label>
-      </div>
-      <div>
-         <input type="radio" id="non-binary" name="gender" value="Non-binary">
-         <label for="non-binary">Non-binary</label>
-      </div>
-      <div>
-         <input type="radio" id="no-say" name="gender" value="I don't want to specify">
-         <label for="no-say">I don't want to specify</label>
-      </div>
-   </fieldset>
-
-   <br>
-
-   <fieldset>
-      <p>Which age group describes you?</p>
-      <div>
-         <input type="radio" id="<25" name="age" value="<25">
-         <label for="<25">&lt; 25</label>
-      </div>
-      <div>
-         <input type="radio" id="25-34" name="age" value="25-34">
-         <label for="25-34">25 - 34</label>
-      </div>
-      <div>
-         <input type="radio" id="35-44" name="age" value="35-44">
-         <label for="35-44">35 - 44</label>
-      </div>
-      <div>
-         <input type="radio" id="45-54" name="age" value="45-54">
-         <label for="45-54">45 - 54</label>
-      </div>
-      <div>
-         <input type="radio" id="55-64" name="age" value="55-64">
-         <label for="55-64">55 - 64</label>
-      </div>
-      <div>
-         <input type="radio" id="65+" name="age" value="65+">
-         <label for="65+">65 +</label>
-      </div>
-   </fieldset>
-
-   <br>
-
-   <fieldset>
-      <p>Are children under the age of 18 living in your home?</p>
-      <div>
-         <input type="radio" id="yes" name="children" value="Yes">
-         <label for="yes">Yes</label>
-      </div>
-      <div>
-         <input type="radio" id="no" name="children" value="No">
-         <label for="no">No</label>
-      </div>
-   </fieldset>
-
-   <br>
-
-   <fieldset>
-      <p>Do you live in a rural environment?</p>
-      <div>
-         <input type="radio" id="yes" name="rural" value="Yes">
-         <label for="yes">Yes</label>
-      </div>
-      <div>
-         <input type="radio" id="no" name="rural" value="No">
-         <label for="no">No</label>
-      </div>
-   </fieldset>
-
-   <br>
-
-   <fieldset>
-      <p>Are you managing employees?</p>
-      <div>
-         <input type="radio" id="yes" name="executive" value="Yes">
-         <label for="yes">Yes</label>
-      </div>
-      <div>
-         <input type="radio" id="no" name="executive" value="No">
-         <label for="no">No</label>
-      </div>
-   </fieldset>
-
-   <br>
-
-   <fieldset>
-      <p>How many employees are there in your company?</p>
-      <div>
-         <input type="radio" id="1" name="employees" value="1">
-         <label for="1">1</label>
-      </div>
-      <div>
-         <input type="radio" id="2-10" name="employees" value="2-10">
-         <label for="2-10">2 - 10</label>
-      </div>
-      <div>
-         <input type="radio" id="11-50" name="employees" value="11-50">
-         <label for="11-50">11 - 50</label>
-      </div>
-      <div>
-         <input type="radio" id="51-500" name="employees" value="51-500">
-         <label for="51-500">51 - 500</label>
-      </div>
-      <div>
-         <input type="radio" id=">500" name="employees" value=">500">
-         <label for=">500">> 500</label>
-      </div>
-   </fieldset>
-
-   <br>
-
-   <fieldset>
-      <p>How many days a week do you work from home on average?</p>
-      <div>
-         <input type="radio" id="1" name="wfh_days" value="1">
-         <label for="1">1</label>
-      </div>
-      <div>
-         <input type="radio" id="2" name="wfh_days" value="2">
-         <label for="2">2</label>
-      </div>
-      <div>
-         <input type="radio" id="3" name="wfh_days" value="3">
-         <label for="3">3</label>
-      </div>
-      <div>
-         <input type="radio" id="4" name="wfh_days" value="4">
-         <label for="4">4</label>
-      </div>
-      <div>
-         <input type="radio" id="5" name="wfh_days" value="5">
-         <label for="5">5</label>
-      </div>
-   </fieldset>
-
-   <br>
-
-   <fieldset>
-      <p>Do you take more breaks when working from home?</p>
-      <div>
-         <input type="radio" id="yes" name="more_breaks" value="Yes">
-         <label for="yes">Yes</label>
-      </div>
-      <div>
-         <input type="radio" id="no" name="more_breaks" value="No">
-         <label for="no">No</label>
-      </div>
-   </fieldset>
-
-   <br>
-
-   <fieldset>
-      <p>How do you feel when you work from home?</p>
-      <div>
-         <input type="radio" id="feel-great" name="wfh_day_condition" value="I feel great">
-         <label for="feel-great">I feel great!</label>
-      </div>
-      <div>
-         <input type="radio" id="feel-better" name="wfh_day_condition" value="I feel better">
-         <label for="feel-better">I feel better!</label>
-      </div>
-      <div>
-         <input type="radio" id="always" name="wfh_day_condition" value="I feel like I always do">
-         <label for="always">I feel like I always do.</label>
-      </div>
-      <div>
-         <input type="radio" id="not-good" name="wfh_day_condition" value="I don't feel so good">
-         <label for="not-good">I don't feel so good!</label>
-      </div>
-      <div>
-         <input type="radio" id="worse" name="wfh_day_condition" value="I feel worse">
-         <label for="worse">I feel worse!</label>
-      </div>
-   </fieldset>
-
-   <br>
-
-   <fieldset>
-      <p>How do you feel about your productivity when you work from home?</p>
-      <div>
-         <input type="radio" id="lot-more" name="productivity" value="I'm a lot more productive">
-         <label for="lot-more">I'm a lot more productive!</label>
-      </div>
-      <div>
-         <input type="radio" id="more" name="productivity" value="I'm more productive">
-         <label for="more">I'm more productive!</label>
-      </div>
-      <div>
-         <input type="radio" id="as-ever" name="productivity" value="I'm as productive as ever">
-         <label for="as-ever">I'm as productive as ever.</label>
-      </div>
-      <div>
-         <input type="radio" id="less" name="productivity" value="I'm less productive">
-         <label for="less">I'm less productive!</label>
-      </div>
-      <div>
-         <input type="radio" id="lot-less" name="productivity" value="I'm a lot less productive">
-         <label for="lot-less">I'm a lot less productive!</label>
-      </div>
-   </fieldset>
-
-   <br><br>
-   <input type="button" value="Submit" onclick="formCheck()">
+   </div>
 </form>
 
 {% endblock %}
