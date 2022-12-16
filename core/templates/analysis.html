@@ -16,17 +16,14 @@
             </div>
          </div>
 
-         <!-- ### Employee happiness data (views.py) ### -->
-         <script id="happiness-labels" type="application/json">{{happiness_labels|safe}}</script>
-         <script id="productivity-labels" type="application/json">{{productivity_labels|safe}}</script>
+         <!-- ### Employee happiness/productivity data (views.py) ### -->
          <script id="happiness-data" type="application/json">{{happiness_data}}</script>
          <script id="productivity-data" type="application/json">{{productivity_data}}</script>
 
-         <!-- ### Employee happiness bar chart ### -->
+         <!-- ### Employee happiness/productivity bar chart ### -->
          <script>
-            const happiness_labels = JSON.parse(document.getElementById('happiness-labels').textContent);
+            const happiness_labels = ['great', 'good', 'neutr.', 'bad', 'worse'];
             const happiness_data = JSON.parse(document.getElementById('happiness-data').textContent);
-            const productivity_labels = JSON.parse(document.getElementById('productivity-labels').textContent);
             const productivity_data = JSON.parse(document.getElementById('productivity-data').textContent);
             const employee_happiness = document.getElementById('employee-happiness');
             new Chart(employee_happiness, {
@@ -38,61 +35,56 @@
                      label: happiness_labels[0],
                      borderWidth: 2,
                      borderColor: '#FFF',
-                     backgroundColor: "#36A2EB"
+                     backgroundColor: "#70B11A"
                   }, {
                      data: [happiness_data[1]],
                      label: happiness_labels[1],
                      borderWidth: 2,
                      borderColor: '#FFF',
-                     backgroundColor: "#FF6384"
+                     backgroundColor: "#9CD302"
                   }, {
                      data: [happiness_data[2]],
                      label: happiness_labels[2],
                      borderWidth: 2,
                      borderColor: '#FFF',
-                     backgroundColor: "#FF9F40"
+                     backgroundColor: "#C8C8C8"
                   }, {
                      data: [happiness_data[3]],
                      label: happiness_labels[3],
                      borderWidth: 2,
                      borderColor: '#FFF',
-                     backgroundColor: "#FFCD56"
+                     backgroundColor: "#F27070"
                   }, {
                      data: [happiness_data[4]],
                      label: happiness_labels[4],
                      borderWidth: 2,
                      borderColor: '#FFF',
-                     backgroundColor: "#4BC0C0"
+                     backgroundColor: "#F20000"
                   }, {
                      data: [productivity_data[0]],
-                     label: productivity_labels[0],
                      borderWidth: 2,
                      borderColor: '#FFF',
-                     backgroundColor: "#36A2EB"
+                     backgroundColor: "#70B11A"
                   }, {
                      data: [productivity_data[1]],
-                     label: productivity_labels[1],
                      borderWidth: 2,
                      borderColor: '#FFF',
-                     backgroundColor: "#FF6384"
+                     backgroundColor: "#9CD302"
                   }, {
                      data: [productivity_data[2]],
-                     label: productivity_labels[2],
                      borderWidth: 2,
                      borderColor: '#FFF',
-                     backgroundColor: "#FF9F40"
+                     backgroundColor: "#C8C8C8"
                   }, {
                      data: [productivity_data[3]],
-                     label: productivity_labels[3],
                      borderWidth: 2,
                      borderColor: '#FFF',
-                     backgroundColor: "#FFCD56"
+                     backgroundColor: "#F27070"
                   }, {
                      data: [productivity_data[4]],
-                     label: productivity_labels[4],
                      borderWidth: 2,
                      borderColor: '#FFF',
-                     backgroundColor: "#4BC0C0"
+                     backgroundColor: "#F20000"
                   }
                   ]
                },
@@ -108,8 +100,7 @@
                      legend: {
                         labels: {
                            filter: (legendItem) => {
-                              console.log(legendItem);
-                              if (legendItem.text == 'I feel great') return true;         
+                              if (legendItem.text != undefined) return true;
                            }
                         },
                         position: 'right'
@@ -317,41 +308,36 @@
                   datasets: [{
                      data: remote_days_children,
                      label: 'Children',
-                     backgroundColor: 'rgb(255,99,132,1)',
+                     backgroundColor: '#E4C477',
                      borderColor: 'white',
-                     borderWidth: 2
+                     borderWidth: 2,
+                     barThickness: 12
                   }, {
                      data: remote_days_rural,
                      label: 'Rural',
-                     backgroundColor: 'rgb(255,159,64,1)',
+                     backgroundColor: '#E9A56C',
                      borderColor: 'white',
-                     borderWidth: 2
+                     borderWidth: 2,
+                     barThickness: 12
                   }, {
                      data: remote_days_executive,
                      label: 'Executive',
-                     backgroundColor: 'rgb(255,205,86,1)',
+                     backgroundColor: '#D87659',
                      borderColor: 'white',
-                     borderWidth: 2
+                     borderWidth: 2,
+                     barThickness: 12
                   }, {
                      data: remote_days_data,
                      label: 'Total',
                      borderColor: 'white',
                      borderWidth: 2,
-                     backgroundColor: 'rgb(54,162,235,1)'
+                     backgroundColor: '#4F9A8F',
+                     barThickness: 12
                   }]
                },
                options: {
                   responsive: true,
-                  maintainAspectRatio: false,
-                  plugins: {
-                     legend: {
-                        labels: {
-                           filter: function (label) {
-                              if (label.text != 'Total') return true;
-                           }
-                        }
-                     }
-                  }
+                  maintainAspectRatio: false
                }
             });
          </script>
