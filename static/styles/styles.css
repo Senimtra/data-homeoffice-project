@@ -1,4 +1,5 @@
 /* ### Imports ### */
+@import 'home.css';
 @import 'analysis.css';
 @import 'survey.css';
 @font-face {
@@ -14,6 +15,7 @@ body {
   background-color: #432b88;
   color: white;
   font-family: "Poppins";
+  padding-top: 4.5em;
 }
 
 .navbar {

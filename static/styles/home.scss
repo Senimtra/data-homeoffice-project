@@ -1,0 +1,47 @@
+/* ### Home styles ### */
+
+.container-home {
+	margin-top: 3em;
+}
+
+.card-home {
+	color: black;
+	padding: 1em 2.5em;
+	border: 0.4em solid #563c9f;
+	box-shadow: 1px 1px 1px 1px #303030;
+	border-radius: 10px;
+	margin-bottom: 1em;
+	h4 {
+		color: #432b88;
+		font-weight: bold;
+		text-align: left;
+		padding-left: 0 !important;
+		padding-top: 0 !important;
+	}
+	p {
+		margin-bottom: 0.7em;
+	}
+}
+
+.home-image {
+	padding: 1em;
+	iframe {
+		border-radius: 0.5em;
+		overflow: hidden;
+	}
+}
+
+.greeting {
+	background-color: #d0c3f8 !important;
+	h2 {
+		margin-bottom: 0;
+	}
+}
+
+.outcome {
+	background-color: #d0c3f8 !important;
+}
+
+.home-grid div {
+	border: 1px solid blue;
+}
